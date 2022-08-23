@@ -1,0 +1,88 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-box {
+  margin: 0 auto;
+  height: 40%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.step,
+.progress {
+  background-color: #fff;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a0a0a0;
+  border-radius: 50%;
+}
+
+.progress {
+  background-color: #e0e0e0;
+  width: 36px;
+  height: 36px;
+  transition: 0.4s;
+}
+
+.connecter {
+  height: 3px;
+  width: 100px;
+  background-color: #e0e0e0;
+}
+
+.fill {
+  width: 0px;
+  height: 100%;
+  background-color: #3498db;
+  transition: 0.4s;
+}
+
+.fill-full {
+  width: 100px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.prev,
+.next {
+  margin: 0 20px;
+  padding: 7px 30px;
+  border-radius: 5px;
+  color: white;
+}
+
+.btn-active {
+  background-color: #3498db;
+  cursor: pointer;
+}
+
+.btn-inactive {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
