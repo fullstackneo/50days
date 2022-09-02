@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@layer components {
+  .box {
+    @apply text-gray-50 text-5xl font-semibold font-sans bg-primary px-32 py-20 rounded-lg my-3 shadow-gray-500 duration-1000 cursor-pointer;
+  }
+}
+
+@tailwind utilities;
+
+@layer utilities {
+  .left-slide {
+    transform: translateX(calc(-50% - 50vw));
+  }
+
+  .right-slide {
+    transform: translateX(calc(50% + 50vw));
+  }
+}

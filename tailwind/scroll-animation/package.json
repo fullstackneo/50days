@@ -1,0 +1,13 @@
+{
+  "name": "scroll-animation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tailwind": "npx tailwindcss -i index.css -o ./dist/index.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
