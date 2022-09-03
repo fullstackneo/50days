@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event KeyCodes</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body class="h-full w-full flex justify-center bg-[#e1e1e1] items-center">
+    <section
+      class="key w-full flex flex-wrap justify-center items-center [&>*]:mx-3 [&>*]:min-w-[180px] [&>*]:px-2 [&>*]:h-[80px] [&>*]:my-3"
+    >
+      <div
+        class="relative border-[1px] shadow-gray-300 shadow-md border-gray-400 bg-[#eeeeee] flex justify-center items-center"
+      >
+        <h2
+          class="absolute left-1/2 top-[-32px] -translate-x-1/2 font-[500] text-lg text-gray-600 hover:(text-red-400,text-2xl)"
+        >
+          event.key
+        </h2>
+        <p class="text-[25px] font-[600]">b</p>
+      </div>
+      <div
+        class="relative border-[1px] shadow-gray-300 shadow-md border-gray-400 bg-[#eeeeee] flex justify-center items-center"
+      >
+        <h2
+          class="absolute left-1/2 top-[-32px] -translate-x-1/2 font-[500] text-lg text-gray-600"
+        >
+          event.keyCode
+        </h2>
+        <p class="text-[25px] font-[600]">66</p>
+      </div>
+      <div
+        class="relative border-[1px] shadow-gray-300 shadow-md border-gray-400 bg-[#eeeeee] flex justify-center items-center"
+      >
+        <h2
+          class="absolute left-1/2 top-[-32px] -translate-x-1/2 font-[500] text-lg text-gray-600"
+        >
+          event.code
+        </h2>
+        <p class="text-[25px] font-[600]">KeyB</p>
+      </div>
+    </section>
+  </body>
+  <script src="index.js"></script>
+</html>
