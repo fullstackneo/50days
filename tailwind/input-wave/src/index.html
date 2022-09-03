@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>Form Input Wave</title>
+  </head>
+  <body class="h-full w-full">
+    <section
+      class="h-full w-full bg-[#4682b4] flex justify-center items-center"
+    >
+      <div
+        class="form w-[380px] h-[430px] rounded-md bg-[#2a4e6c] flex flex-col justify-evenly items-center py-2 px-10"
+      >
+        <h2 class="text-4xl font-semibold text-white">Please Login</h2>
+        <div
+          class="w-full h-[50px] relative text-white text-xl border-b-2 border-white"
+        >
+          <input
+            type="text"
+            class="absolute w-full left-0 top-2 outline-none bg-[#2a4e6c]"
+          />
+          <div class="absolute left-0 top-2 flex pointer-events-none">
+            <span class="duration-300">E</span>
+            <span class="duration-300">m</span>
+            <span class="duration-300">a</span>
+            <span class="duration-300">i</span>
+            <span class="duration-300">l</span>
+          </div>
+        </div>
+
+        <div
+          class="w-full h-[50px] relative text-white text-xl border-b-2 border-white"
+        >
+          <input
+            type="text"
+            class="absolute w-full left-0 top-2 outline-none bg-[#2a4e6c]"
+          />
+          <div class="absolute left-0 top-2 flex pointer-events-none">
+            <span class="duration-300">P</span>
+            <span class="duration-300">a</span>
+            <span class="duration-300">s</span>
+            <span class="duration-300">s</span>
+            <span class="duration-300">w</span>
+            <span class="duration-300">o</span>
+            <span class="duration-300">r</span>
+            <span class="duration-300">d</span>
+          </div>
+        </div>
+
+        <button class="w-full bg-[#add8e6] rounded-md py-4">Login</button>
+        <div class="w-full flex">
+          <p class="text-white">Don't have an account?&nbsp;</p>
+          <a class="text-[#add8e6]" href="#">Register</a>
+        </div>
+      </div>
+    </section>
+    <script src="./index.js"></script>
+  </body>
+</html>
