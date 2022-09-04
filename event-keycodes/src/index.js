@@ -1,9 +1,21 @@
-let h2Els = document.querySelectorAll('.key p');
+let keySectionEl = document.querySelector('.key');
+
+let boxComponent = value => {
+  return ` <div
+    class="relative flex  items-center justify-center border-[1px] border-gray-400 bg-[#eeeeee] shadow-md shadow-gray-300 "
+  >
+    <h2
+      class="absolute left-1/2 top-[-32px] -translate-x-1/2 text-lg font-[500]  text-gray-600"
+    >
+      event.key
+    </h2>
+    <p class="text-[25px] font-[600]">${value}</p>
+  </div>`;
+};
 
 document.onkeydown = e => {
-  let key = e.key === ' ' ? 'Space' : e.key;
-  if (key === h2Els[0].textContent) return;
-  h2Els[0].textContent = key;
-  h2Els[1].textContent = e.which || e.keyCode;
-  h2Els[2].textContent = e.code;
+  keySectionEl.innerHTML =
+    boxComponent(e.key === ' ' ? 'Space' : e.key) +
+    boxComponent(e.which || e.keyCode) +
+    boxComponent(e.code);
 };
