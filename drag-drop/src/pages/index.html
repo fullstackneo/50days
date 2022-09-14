@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag Drop</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+  </head>
+  <style>
+    .current {
+      cursor: pointer;
+      background-color: #172b36;
+    }
+
+    .potential {
+      border-style: dashed;
+      background-color: #4e4e4e8f;
+      border-color: white;
+    }
+  </style>
+
+  <body class="flex h-full w-full items-center justify-center bg-background">
+    <section class="boxSection flex flex-col items-center justify-center sm:flex-row">
+      <div class="box current m-2 h-[150px] w-[150px] border-[3px] border-black bg-white"></div>
+      <div class="box m-2 h-[150px] w-[150px] border-[3px] border-black bg-white"></div>
+      <div class="box m-2 h-[150px] w-[150px] border-[3px] border-black bg-white"></div>
+      <div class="box m-2 h-[150px] w-[150px] border-[3px] border-black bg-white"></div>
+      <div class="box m-2 h-[150px] w-[150px] border-[3px] border-black bg-white"></div>
+    </section>
+  </body>
+
+  <script>
+    let boxSection = document.querySelector('.boxSection');
+    let boxes = boxSection.querySelectorAll('.box');
+
+    // become normal when mouse leaves
+    let becomeNormal = e => {
+      e.target.classList.remove('potential');
+    };
+    // become potential when mouse moves in
+    let becomePotential = e => {
+      e.target.classList.add('potential');
+    };
+
+    boxSection.addEventListener('mousedown', e => {
+      e.preventDefault();
+
+      let previous = boxSection.querySelector('.current');
+
+      if (e.target !== previous) return (previous = null);
+      // remove the current box's style
+
+      //generate a floating box from current box, let it move with mouse
+
+      previous.innerHTML = /*html*/ `<div class="floatBox absolute left-[${e.target.offsetLeft}] top-[${e.target.offsetTop}] translate-x-[-3px] translate-y-[-3px] h-[150px] w-[150px] border-[3px] border-gray-300 bg-black opacity-50 pointer-events-none"></div>`;
+      let floatBox = previous.querySelector('.floatBox');
+
+      // let floatBox = document.createElement('div');
+      // floatBox.setAttribute(
+      //   'class',
+      //   `floatBox absolute left-[${e.target.offsetLeft}] top-[${e.target.offsetTop}] translate-x-[-3px] translate-y-[-3px] h-[150px] w-[150px] border-[3px] border-gray-300 bg-black opacity-50 pointer-events-none`
+      // );
+      // previous.appendChild(floatBox);
+
+      let left = e.pageX;
+      let right = e.pageY;
+
+      let trackMouse = e => {
+        let x = e.pageX - left;
+        let y = e.pageY - right;
+        floatBox.style.transform = `translate(${x - 3}px,${y - 3}px)`;
+      };
+
+      window.addEventListener('mousemove', trackMouse);
+
+      previous.classList.remove('current');
+      // register events for boxes
+      for (let box of boxes) {
+        box.addEventListener('mousemove', becomePotential);
+        box.addEventListener('mouseout', becomeNormal);
+      }
+
+      // register mouseup event
+      document.addEventListener(
+        'mouseup',
+        () => {
+          // remove all the box events
+          for (let box of boxes) {
+            box.removeEventListener('mousemove', becomePotential);
+            box.removeEventListener('mouseout', becomeNormal);
+          }
+          // remove window event
+          window.removeEventListener('mousemove', trackMouse);
+
+          previous.innerHTML = '';
+
+          // let the 'potential' box become 'current'
+          let potential = boxSection.querySelector('.potential');
+          if (potential && potential !== previous) {
+            previous.classList.remove('current');
+            potential.classList.remove('potential');
+            potential.classList.add('current');
+          } else {
+            previous.classList.add('current');
+            previous.classList.remove('potential');
+          }
+
+          // garbage collection
+          floatBox = null;
+          potential = null;
+          previous = null;
+        },
+        // delete the event itselft after running
+        { once: true }
+      );
+    });
+  </script>
+</html>
