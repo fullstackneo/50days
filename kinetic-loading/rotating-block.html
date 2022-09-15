@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 150px;
+        height: 150px;
+        background-color: blue;
+        margin: 50px auto 0;
+        transition: 1s ease;
+        border-top: 2px solid red;
+      }
+
+      .reset {
+        transition: 0s;
+      }
+    </style>
+  </head>
+  <body class="h-full w-full">
+    <div></div>
+  </body>
+
+  <script>
+    let block = document.querySelector('div');
+    i = 1;
+    let timer = setInterval(() => {
+      block.style.transform = `rotate(${180 * i}deg)`;
+      i++;
+      console.log(i);
+      if (i === 3) {
+        i = 1;
+        setTimeout(() => {
+          block.style.transform = `rotate(0deg)`;
+          block.classList.add('reset');
+          // add offsetHeight to stop the browser combine the dom operation
+          block.offsetHeight;
+          block.classList.remove('reset');
+        }, 1000);
+      }
+    }, 1020);
+  </script>
+</html>
