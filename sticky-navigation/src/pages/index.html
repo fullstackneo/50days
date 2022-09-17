@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sticky Navigation</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+  </head>
+  <body class="h-full w-full">
+    <nav class="nav fixed top-0 z-10 flex h-[65px] w-full items-center justify-between bg-[#222222] px-[8px] duration-500">
+      <a class="text-2xl font-semibold text-white hover:text-menu-active duration-500 href="javascript:;">My Website</a>
+      <div class="menu text-[17px] text-white">
+        <a class="menuItem mx-4 text-white font-medium duration-500 hover:text-menu-active" href="javascript:;" onclick="toTop()">Home</a>
+        <a class="menuItem mx-4 text-white font-medium duration-500 hover:text-menu-active" href="javascript:;" onclick="toTop()">About</a>
+        <a class="menuItem mx-4 text-white font-medium duration-500 hover:text-menu-active" href="javascript:;" onclick="toTop()">Service</a>
+        <a class="menuItem mx-4 text-white font-medium duration-500 hover:text-menu-active" href="javascript:void(0)" onclick="toTop()">Contact</a>
+      </div>
+    </nav>
+    <div
+      class="hero mb-[20px] relative flex h-full w-full cursor-default flex-col items-center justify-center bg-hero bg-cover bg-center text-center -z-10"
+    >
+      
+      <h2 class="z-10 text-[46px] font-semibold text-white">Welcome To My Website</h2>
+      <p class="z-10 text-[22px] text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit ipsa impedit</p>
+    </div>
+
+    <section class="my-5 px-5">
+      <div class="my-[12px]">
+        <h2 class="mb-[25px] text-3xl font-semibold">Content One</h2>
+        <p class="text-lg text-gray">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti reiciendis ad voluptas nesciunt, iste autem et sed, accusamus atque rem
+          voluptatum repudiandae? Facere voluptate magnam necessitatibus eveniet dolorum iusto aspernatur!
+        </p>
+      </div>
+      <div class="my-[12px]">
+        <h2 class="mb-[25px] text-3xl font-semibold">Content One</h2>
+        <p class="text-lg text-gray">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti reiciendis ad voluptas nesciunt, iste autem et sed, accusamus atque rem
+          voluptatum repudiandae? Facere voluptate magnam necessitatibus eveniet dolorum iusto aspernatur!
+        </p>
+      </div>
+    </section>
+  </body>
+  <script src="../components/Nav.js"></script>
+</html>
