@@ -693,6 +693,13 @@ video {
   background-position: center;
 }
 
+<<<<<<< HEAD
+=======
+.bg-no-repeat{
+  background-repeat: no-repeat;
+}
+
+>>>>>>> bfc1f0879355f40542087d104fa0094cf9f2b79e
 .pb-8{
   padding-bottom: 2rem;
 }
