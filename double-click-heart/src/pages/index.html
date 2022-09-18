@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class="h-full w-full font-oswald" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Double Click Heart</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+  </head>
+  <body class="flex h-full w-full items-start justify-center">
+    <div id="card" class="mt-5 w-[300px] select-none">
+      <div id="card-header" class="my-3">
+        <h3 class="text-center text-lg font-bold">Double click on the image to <span class="text-[#ff0000]">❤</span> it</h3>
+        <p class="like text-center text-sm">You Liked it <span>0</span> times</p>
+      </div>
+      <div id="card-pic" class="relative h-[440px] cursor-pointer shadow-[0px_10px_10px_gray]">
+        <img
+          class="h-full w-full object-cover"
+          src="https://images.unsplash.com/photo-1504215680853-026ed2a45def?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80"
+          alt="car"
+        />
+        <div class="heart absolute hidden animate-[heart_1s_linear] text-[20px] leading-[20px] text-[#ff0000] duration-500">❤</div>
+      </div>
+    </div>
+  </body>
+  <script src="../components/card.js"></script>
+</html>
