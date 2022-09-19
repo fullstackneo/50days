@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password generator</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+  </head>
+  <body class="flex h-full w-full items-center justify-center bg-primary">
+    <section
+      class="generator flex h-[380px] w-[350px] flex-col items-stretch justify-evenly bg-secondary px-4 pt-3 text-white shadow-[0px_1px_6px_-1px_#8F8F8FD8]"
+    >
+      <h1 class="text-center text-2xl font-semibold">Password Generator</h1>
+      <div class="relative h-[47px] bg-tertiary py-3 px-2">
+        <p class="password"></p>
+        <span class="clip absolute right-1 top-1 h-[38px] w-[38px] cursor-pointer bg-primary py-1 text-center text-xl">
+          <i class="fa-regular fa-clipboard"></i>
+        </span>
+      </div>
+      <div class="flex items-center justify-between">
+        <label for="length">Password Length</label>
+        <input id="length" type="number" value="20" class="w-[60px] select-none px-1 text-sm text-black outline-none" min="4" max="20" />
+      </div>
+      <div class="flex items-center justify-between">
+        <label for="uppercase">Include uppercase letters</label>
+        <input id="uppercase" type="checkbox" />
+      </div>
+      <div class="flex items-center justify-between">
+        <label for="lowercase">Include lowercase letters</label>
+        <input id="lowercase" type="checkbox" />
+      </div>
+      <div class="flex items-center justify-between">
+        <label for="number">Include numbers</label>
+        <input id="number" type="checkbox" />
+      </div>
+      <div class="flex items-center justify-between">
+        <label for="symbol">Include symbols</label>
+        <input id="symbol" type="checkbox" />
+      </div>
+      <button class="generate bg-primary py-2">Generate Password</button>
+    </section>
+  </body>
+  <script src="../components/password-generator.js"></script>
+  <script src="https://kit.fontawesome.com/59586d731f.js" crossorigin="anonymous"></script>
+</html>
