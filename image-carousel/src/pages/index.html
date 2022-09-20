@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Crousel</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+  </head>
+  <body class="flex h-full w-full items-center justify-center">
+    <section class="w-[500px] overflow-hidden shadow-[2px_1px_6px_0px_gray]">
+      <div class="h-[500px] w-[500px] overflow-hidden">
+        <div class="pics flex h-full flex-nowrap items-center justify-start duration-500 [&>*]:shrink-0 [&>*]:basis-[500px]">
+          <div
+            class="h-full w-full bg-[url('https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')] bg-cover bg-center"
+          ></div>
+          <div
+            class="h-full w-full bg-[url('https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')] bg-cover bg-center"
+          ></div>
+          <div
+            class="h-full w-full bg-[url('https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')] bg-cover bg-center"
+          ></div>
+          <div
+            class="h-full w-full bg-[url('https://images.unsplash.com/photo-1593642632559-0c6d3fc62b89?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80')] bg-cover bg-center"
+          ></div>
+        </div>
+      </div>
+
+      <div class="flex h-[30px] items-center justify-center text-center text-sm leading-[30px] text-white">
+        <span class="mr-1 h-full flex-auto cursor-pointer bg-primary" onclick="changeSlider(-1)">Prev</span>
+        <span class="h-full flex-auto cursor-pointer bg-primary" onclick="changeSlider(1)">Next</span>
+      </div>
+    </section>
+  </body>
+  <script src="../components/image-carousel.js"></script>
+  <script src="https://kit.fontawesome.com/59586d731f.js" crossorigin="anonymous"></script>
+</html>
