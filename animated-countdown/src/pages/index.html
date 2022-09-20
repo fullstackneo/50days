@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+  </head>
+  <body class="flex h-full w-full items-center justify-center">
+    <div class="countdown relative h-[160px] w-[160px] text-center font-['Roboto']">
+      <div class="window mx-auto h-[80px] w-[80px]"></div>
+      <div class="z-10 mx-auto h-[80px] w-[80px] bg-white">
+        <p class="show absolute left-0 top-0 w-full animate-[go_0.2s_linear] text-center text-3xl font-[700] leading-[80px] ">GO</p>
+        <p class="hide absolute left-0 hidden w-full text-center text-lg font-bold uppercase tracking-wide">get ready</p>
+        <button class="show replayBtn rounded-[4px] border-[1px] border-gray-500 bg-[#efefef] px-2 text-[13px] hover:bg-[#e5e5e5]">Replay</button>
+        <div class="number pointer-events-none absolute left-0 top-0 -z-10 h-full w-full py-8 text-5xl text-primary"></div>
+      </div>
+    </div>
+  </body>
+  <script src="../components/countdown.js"></script>
+  <script src="https://kit.fontawesome.com/59586d731f.js" crossorigin="anonymous"></script>
+</html>
