@@ -1,6 +1,6 @@
 import { singleSlider, carouselHTML } from './template.js';
 
-// fetch data from db
+// fetched data
 let data = [
   {
     title: '0',
@@ -40,58 +40,62 @@ let data = [
   },
 ];
 
+// generate N+2 sliders' html
+// ** Attention: to generate a seamless sliding effect without rolling back to the 1st when the last img slides, so the html structure is: '<last pic/> + <all pics/> + <first pic/>', the imgs' order is like: 5,0,1,2,3,4,5,0
+let sliders = data.reduce((res, cur) => res + singleSlider(cur), singleSlider(data.at(-1))) + singleSlider(data[0]);
 
+// render carousel and sliders to page
+document.querySelector('body').insertAdjacentHTML('beforeend', carouselHTML(sliders));
 
-// DOM operation
 let pics = document.querySelector('.pics');
 let count = 1;
+let timer;
 
-let startSlider = () => {
+// reset position of the whole pics element
+let resetPosition = () => {
+  if (count === data.length + 1) {
+    pics.style.transition = '0s';
+    pics.style.transform = `translateX(-500px)`;
+    count = 1;
+  } else if (count === 0) {
+    pics.style.transition = '0s';
+    pics.style.transform = `translateX(-${500 * data.length}px)`;
+    count = data.length;
+  }
+};
+
+// show a specific img
+let moveToPosition = count => {
+  pics.style.transition = '1s ease-in-out';
+  pics.style.transform = `translateX(-${count * 500}px)`;
+};
+
+// slide automatically every 2 sec
+let autoSlide = () => {
   timer = setInterval(() => {
     count++;
-    pics.style.transition = '1s ease-in-out';
-    pics.style.transform = `translateX(-${count * 500}px)`;
-
+    moveToPosition(count);
     if (count === data.length + 1) {
-      setTimeout(() => {
-        // reset the slider's position
-        pics.style.transition = '0s';
-        pics.style.transform = `translateX(-500px)`;
-        count = 1;
-      }, 1000);
+      setTimeout(() => resetPosition(), 1000);
     }
   }, 2000);
 };
 
-
 // slide manually by clicking 'prev' and 'next'
 let changeSlider = value => {
-  // change position without any notice
-  if (count === 0 && value < 0) {
-    pics.style.transition = '0s';
-    pics.style.transform = `translateX(-${500 * data.length}px)`;
-    count = data.length;
-  } else if (count === data.length + 1 && value > 0) {
-    pics.style.transition = '0s';
-    pics.style.transform = `translateX(-500px)`;
-    count = 1;
+  // reset position when img is
+  if ((count === 0 && value < 0) || (count === data.length + 1 && value > 0)) {
+    resetPosition();
   }
-
+  // move to specific position
   setTimeout(() => {
     count += value;
-    pics.style.transition = '1s ease-in-out';
-    pics.style.transform = `translateX(-${count * 500}px)`;
+    moveToPosition(count);
   }, 0);
 };
 
-// generate N+2 sliders
-let sliders = data.reduce((res, cur) => res + singleSlider(cur), singleSlider(data.at(-1))) + singleSlider(data[0]);
-
-// render carousel to page
-document.querySelector('body').innerHTML = carouselHTML(sliders);
-
 // slide automatically
-startSlider();
+autoSlide(); 
 
 // click 'prev' or 'next' to slide pics
 document.querySelector('.prev').onclick = () => changeSlider(-1);
@@ -101,4 +105,4 @@ document.querySelector('.next').onclick = () => changeSlider(1);
 document.querySelector('.carousel').onmouseover = () => clearInterval(timer);
 
 // mouseout: start sliding automatically
-document.querySelector('.carousel').onmouseout = () => startSlider();
+document.querySelector('.carousel').onmouseout = () => autoSlide();
