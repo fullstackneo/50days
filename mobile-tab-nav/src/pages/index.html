@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html class="h-full w-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mobile Tab Nav</title>
+    <link rel="stylesheet" href="../assets/css/index.css" />
+  </head>
+  <body class="flex h-full w-full items-center justify-center bg-[#b88acb]">
+    <section
+      class="items-strench flex h-[600px] w-[340px] flex-col justify-center overflow-hidden rounded-[10px] border-[3px] border-[#eeeeee] bg-white"
+    >
+      <div
+        class="pic flex-auto bg-cover bg-center duration-1000"
+        style="
+          background-image: url('https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1053&q=80');
+        "
+      ></div>
+      
+      <div class="nav mt-auto h-[60px] max-h-[58px] pt-3">
+        <ul class="flex h-full shrink-[60px] items-center justify-evenly text-[#777777]">
+          <li class="flex cursor-pointer flex-col items-center justify-center text-primary hover:text-primary children:pointer-events-none">
+            <i class="fa-solid fa-house-chimney"></i><span class="my-1 text-xs" data-index="1">Home</span>
+          </li>
+          <li class="flex cursor-pointer flex-col items-center justify-center hover:text-primary children:pointer-events-none">
+            <i class="fa-solid fa-briefcase"></i><span class="my-1 text-xs">Work</span>
+          </li>
+          <li class="flex cursor-pointer flex-col items-center justify-center hover:text-primary children:pointer-events-none">
+            <i class="fa-solid fa-book-open"></i><span class="my-1 text-xs">Blog</span>
+          </li>
+          <li class="flex cursor-pointer flex-col items-center justify-center hover:text-primary children:pointer-events-none">
+            <i class="fa-solid fa-people-group"></i><span class="my-1 text-xs">About Us</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+  <script type="module" src="./../components/mobile-nav/index.js"></script>
+  <script src="https://kit.fontawesome.com/59586d731f.js" crossorigin="anonymous"></script>
+</html>
