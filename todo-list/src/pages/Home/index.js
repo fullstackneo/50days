@@ -1,5 +1,5 @@
 // render component to page
-import { Todo } from './../../components/component/template.js';
+import { Todo } from './../../components/component/html.js';
 document.querySelector('#todo').innerHTML = Todo;
 
 // insert DOM operation for component
