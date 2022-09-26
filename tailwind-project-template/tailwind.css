@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,500,600,700,800,900&display=swap');
+
+@tailwind base;
+
+@tailwind components;
+@layer components {
+}
+@tailwind utilities;
+
+@layer utilities {
+}
