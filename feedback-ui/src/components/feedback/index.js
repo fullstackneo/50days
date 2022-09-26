@@ -1,12 +1,12 @@
-import { chooseFeedback, thankYou } from './template.js';
+import {rating, thankYou } from './template.js';
 // insert component
-document.querySelector('body').innerHTML = chooseFeedback;
+document.querySelector('#fb-section').innerHTML = rating;
 
 // DOM operations
 let fbSection = document.querySelector('#fb');
-let feedbacks = document.querySelector('.feedbacks');
-let allfeedbacks = feedbacks.querySelectorAll('li');
-let sendBtn = document.querySelector('.send');
+let feedbacks = fbSection.querySelector('.feedbacks');
+let allfeedbacks = fbSection.querySelectorAll('li');
+let sendBtn = fbSection.querySelector('.send');
 let shadowEffect = 'shadow-[0_0_8px_#cccccc]';
 let feedback = 'Satisfied';
 

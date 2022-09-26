@@ -12,15 +12,15 @@ const generateChoice = ({ icon, content, shadow }) =>
     <p class="my-1">${content}</p>
   </li>`;
 
-export const chooseFeedback =
+export const rating =
   /*html*/
-  ` <section id="fb" class="FB flex h-[280px] w-[370px] flex-col items-center justify-evenly rounded bg-white pt-2 text-center font-montserrat text-sm shadow-[0_0_9px_0_#aaaaaa]">
+  ` <div id="fb" class="FB flex h-[280px] w-[370px] flex-col items-center justify-evenly rounded bg-white pt-2 text-center font-montserrat text-sm shadow-[0_0_9px_0_#aaaaaa]">
       <h2 class="px-14 font-[600]">How satisfied are you with our customer support performance?</h2>
       <ul class="feedbacks flex items-center justify-center text-xs">
         ${data.reduce((res, cur) => res + generateChoice(cur), '')}
       </ul>
       <button class="send h-[40px] w-[140px] rounded bg-black text-xs text-white">Send Review</button>
-    </section>`;
+    </div>`;
 
 export const thankYou = feedback =>
   /*html*/
