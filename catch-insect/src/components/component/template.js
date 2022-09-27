@@ -10,7 +10,7 @@ export const CatchInsect = /*html*/ `<div class="catch-the-insect h-full overflo
             </ul>
           </div>
           <div id="playground" class="relative bg-primary children:select-none">
-            <div class="timer absolute left-5 top-10 text-2xl font-bold">Time: <span class="hr">00</span>:<span class="min">00</span></div>
+            <div class="timer absolute left-5 top-10 text-2xl font-bold"></div>
             <div class="score absolute top-10 right-5 text-2xl font-bold">Score: <span>0</span></div>
           </div>
         </div>
