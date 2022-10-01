@@ -4,4 +4,4 @@
 
 
 // insert DOM operation for component
-import('')
+// import('')
